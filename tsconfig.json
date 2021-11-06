@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonJS",
+    "jsx": "react",
+    "sourceMap": true,
+    "outDir": "dist",
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "preserveConstEnums": true,
+    "baseUrl": ".",
+    "paths": {
+      "@types/*": ["./src/@types/*"],
+      "@Pages/**/*": ["./src/pages/**/*"],
+      "@Hooks/*": ["./src/hooks/*"],
+      "@Routes/*": ["./src/routes/*"],
+      "@Assets/*": ["./src/assets/*"],
+      "@Services/*": ["./src/services/*"],
+      "@Components/*": ["./src/components/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "build"]
+}
