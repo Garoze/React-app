@@ -7,34 +7,34 @@ module.exports = {
   mode: isDevelopment ? 'development' : 'production',
   devtool: isDevelopment ? 'eval-source-map' : 'source-map',
   entry: {
-    app: path.resolve(__dirname, '..', 'src', 'index.tsx'),
+    app: path.resolve(__dirname, '../src/index.tsx'),
     vendor: ['react', 'react-dom'],
   },
   output: {
-    path: path.resolve(__dirname, '..', 'dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename: 'js/[name].bundle.js',
   },
   resolve: {
     preferRelative: true,
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
-    modules: [path.resolve(__dirname, '..', 'node_modules')],
+    modules: [path.resolve(__dirname, '../node_modules')],
     alias: {
-      '@types': path.resolve(__dirname, '..', 'src', '@types'),
-      '@Pages': path.resolve(__dirname, '..', 'src', 'pages'),
-      '@Hooks': path.resolve(__dirname, '..', 'src', 'hooks'),
-      '@Routes': path.resolve(__dirname, '..', 'src', 'routes'),
-      '@Assets': path.resolve(__dirname, '..', 'src', 'assets'),
-      '@Services': path.resolve(__dirname, '..', 'src', 'services'),
-      '@Components': path.resolve(__dirname, '..', 'src', 'components'),
+      '@types': path.resolve(__dirname, '../src/@types'),
+      '@Pages': path.resolve(__dirname, '../src/pages'),
+      '@Hooks': path.resolve(__dirname, '../src/hooks'),
+      '@Routes': path.resolve(__dirname, '../src/routes'),
+      '@Assets': path.resolve(__dirname, '../src/assets'),
+      '@Services': path.resolve(__dirname, '../src/services'),
+      '@Components': path.resolve(__dirname, '../src/components'),
     },
   },
   devServer: {
-    static: path.resolve(__dirname, '..', 'public'),
+    static: path.resolve(__dirname, '../public'),
     port: 8000,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '..', 'public', 'index.html'),
+      template: path.resolve(__dirname, '../public/index.html'),
     }),
   ],
   module: {
@@ -45,7 +45,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-react'],
+            presets: ['@babel/preset-react', { runtime: 'automatic' }],
           },
         },
       },

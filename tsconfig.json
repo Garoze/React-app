@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES5",
     "module": "commonJS",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "sourceMap": true,
     "outDir": "dist",
     "removeComments": true,
@@ -12,7 +12,7 @@
     "baseUrl": ".",
     "paths": {
       "@types/*": ["./src/@types/*"],
-      "@Pages/**/*": ["./src/pages/**/*"],
+      "@Pages/*": ["./src/pages/*"],
       "@Hooks/*": ["./src/hooks/*"],
       "@Routes/*": ["./src/routes/*"],
       "@Assets/*": ["./src/assets/*"],
@@ -20,6 +20,6 @@
       "@Components/*": ["./src/components/*"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src"],
   "exclude": ["node_modules", "build"]
 }
